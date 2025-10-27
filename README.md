@@ -1,3 +1,23 @@
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## React Compiler
+
+The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+
+Note: This will impact Vite dev & build performances.
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
 # React.js and Tailwind CSS Assignment
 
 This assignment focuses on building a responsive React application using JSX and Tailwind CSS, implementing component architecture, state management, hooks, and API integration.
@@ -24,47 +44,141 @@ You will:
    npm run dev
    ```
 
-## Files Included
+# PLP Task Manager — React + Vite + Tailwind
 
-- `Week3-Assignment.md`: Detailed assignment instructions
-- Starter files for your React application:
-  - Basic project structure
-  - Pre-configured Tailwind CSS
-  - Sample component templates
+This repository contains the Week 3 assignment: a small React application built with Vite and styled with Tailwind CSS. It demonstrates component architecture, hooks, context for theme management, and API integration.
 
-## Requirements
+---
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Modern web browser
-- Code editor (VS Code recommended)
+## Table of contents
 
-## Project Structure
+- Project overview
+- Features
+- Quick start
+- Development
+- Deployment
+- Screenshots
+- Troubleshooting
+- Project structure
+- License
+
+---
+
+## Project overview
+
+This app is a simple Task Manager with:
+
+- A TaskManager component (add/complete/delete/filter tasks)
+- Theme switcher (light/dark) using React Context
+- A small API page fetching posts from JSONPlaceholder
+
+## Features
+
+- Add, complete, and delete tasks (persisted in localStorage)
+- Dark/light mode toggle (class-based)
+- Simple client-side routing by toggling pages via context
+- Tailwind CSS for styling
+
+---
+
+## Quick start
+
+Requirements
+
+- Node.js (v18+ recommended)
+- npm
+
+Install dependencies
+
+```powershell
+npm install
+```
+
+Start development server
+
+```powershell
+npm run dev
+```
+
+Build for production
+
+```powershell
+npm run build
+```
+
+Preview production build
+
+```powershell
+npm run preview
+```
+
+---
+
+## Development notes
+
+- The app's entry point is `src/main.jsx`.
+- Global styles are in `src/index.css`. Tailwind is configured via `tailwind.config.js` (`darkMode: 'class'`).
+- Theme context is in `src/context/ThemeContext.jsx` — it toggles the `.dark` class on `<html>`.
+- Task persistence uses `src/hooks/useLocalStorage.js`.
+
+Environment variables
+
+- See `.env` for sample variables. For local development you typically don’t need to set anything unless integrating external APIs.
+
+---
+
+## Screenshots
+
+Place three screenshots below (replace the placeholder paths with your screenshots in the repository):
+
+1) Landing / Home view
+
+![Screenshot - Home](./screenshots/home.png)
+
+2) Task Manager view (tasks list)
+
+![Screenshot - Tasks](./screenshots/tasks.png)
+
+3) API Data view
+
+![Screenshot - API Data](./screenshots/api.png)
+
+---
+
+## Deployed URL
+
+Add your deployed site URL here once deployed:
+
+[Deployed app — add URL here](https://your-deployed-url.example.com)
+
+---
+
+## Troubleshooting
+
+- Dark mode not applying? Ensure `tailwind.config.js` contains `darkMode: 'class'` and that the app toggles `document.documentElement.classList` (see `src/context/ThemeContext.jsx`). If dark styles don't appear, restart the dev server and hard-refresh the browser.
+- If components don't show updated styles, check that `src/index.css` is imported in `src/main.jsx` and the Tailwind plugin is enabled in `vite.config.js`.
+
+---
+
+## Project structure
 
 ```
 src/
-├── components/       # Reusable UI components
-├── pages/           # Page components
-├── hooks/           # Custom React hooks
-├── context/         # React context providers
-├── api/             # API integration functions
-├── utils/           # Utility functions
-└── App.jsx          # Main application component
+├── api/               # API helper functions
+├── components/        # Reusable UI components (Button, Navbar, Footer, TaskManager)
+├── context/           # ThemeContext provider
+├── hooks/             # Custom hooks (useLocalStorage)
+├── pages/             # Page components (Home, ApiData)
+├── utils/             # Small utilities
+├── index.css          # Global styles
+├── main.jsx           # App entry
+└── App.jsx            # App layout
 ```
 
-## Submission
+---
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+## License
 
-1. Complete all required components and features
-2. Implement proper state management with hooks
-3. Integrate with at least one external API
-4. Style your application with Tailwind CSS
-5. Deploy your application and add the URL to your README.md
+This project is provided for educational purposes.
 
-## Resources
-
-- [React Documentation](https://react.dev/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Vite Documentation](https://vitejs.dev/guide/)
-- [React Router Documentation](https://reactrouter.com/) 
+---
