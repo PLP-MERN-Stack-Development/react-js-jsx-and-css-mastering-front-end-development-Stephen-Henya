@@ -131,15 +131,11 @@ Environment variables
 
 Place three screenshots below (replace the placeholder paths with your screenshots in the repository):
 
-1) Landing / Home view
+1) Landing / Home view (With Tasks List)
 
 ![Screenshot - Home](./screenshots/home.png)
 
-2) Task Manager view (tasks list)
-
-![Screenshot - Tasks](./screenshots/tasks.png)
-
-3) API Data view
+2) API Data view
 
 ![Screenshot - API Data](./screenshots/api.png)
 
@@ -147,9 +143,7 @@ Place three screenshots below (replace the placeholder paths with your screensho
 
 ## Deployed URL
 
-Add your deployed site URL here once deployed:
-
-[Deployed app — add URL here](https://your-deployed-url.example.com)
+[Deployed app URL](https://react-js-jsx-and-css-masteri-git-88e709-stephen-henyas-projects.vercel.app)
 
 ---
 
